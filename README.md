@@ -1,5 +1,5 @@
 # Lavoro-di-gruppo-Git-Branch
-Gruppo formato Latta, Lucania, Marietta
+Gruppo formato Latta, Lucania, Marietta,Pomella,Lieto
 
 
 Compito di Esercitazione: Utilizzo di Git per il Lavoro Collaborativo su Branch
