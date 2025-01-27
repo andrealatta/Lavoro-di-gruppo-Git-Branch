@@ -1,1 +1,56 @@
-<button id="copyPassword">Copy to Clipboard</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copy Password</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #copyPassword {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    #copyPassword:hover {
+      background-color: #45a049;
+    }
+    #copyMessage {
+      margin-top: 10px;
+      color: green;
+      font-size: 14px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="password" value="GeneratedPassword123!" readonly>
+  <button id="copyPassword">Copy to Clipboard</button>
+  <p id="copyMessage">Password copied to clipboard!</p>
+
+  <script>
+    const copyButton = document.getElementById('copyPassword');
+    const passwordField = document.getElementById('password');
+    const copyMessage = document.getElementById('copyMessage');
+
+    copyButton.addEventListener('click', () => {
+      navigator.clipboard.writeText(passwordField.value)
+        .then(() => {
+          copyMessage.style.display = 'block';
+          setTimeout(() => {
+            copyMessage.style.display = 'none';
+          }, 2000);
+        })
+        .catch(err => {
+          console.error('Failed to copy: ', err);
+        });
+    });
+  </script>
+</body>
+</html>
